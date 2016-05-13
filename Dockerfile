@@ -20,7 +20,7 @@ WORKDIR /home/galaxy
 # Galaxy source
 RUN curl --silent -L https://github.com/galaxyproject/galaxy/archive/v15.07.tar.gz | tar zxf -
 RUN chown -R galaxy.galaxy ./galaxy-15.07
-RUN sed 's/^#host = 127.0.0.1/host = 0.0.0.0/' /home/galaxy/galaxy-15.07/config/galaxy.ini.sample > /home/gala
+RUN sed 's/^#host = 127.0.0.1/host = 0.0.0.0/' /home/galaxy/galaxy-15.07/config/galaxy.ini.sample > /home/galaxy/galaxy-15.07/config/galaxy.ini
 RUN cd /home/galaxy/galaxy-15.07 ; ./scripts/common_startup.sh
 RUN cd /home/galaxy/galaxy-15.07 ; ./create_db.sh
 ADD start.sh /usr/local/bin/start.sh
