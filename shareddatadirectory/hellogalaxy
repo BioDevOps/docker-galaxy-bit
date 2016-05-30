@@ -1,0 +1,4 @@
+echo "---"
+hostname
+echo "---"
+echo "Hello Galaxy"
