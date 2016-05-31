@@ -1,7 +1,7 @@
 FROM ubuntu:14.04.4
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq ; apt-get upgrade ; \
-    apt-get install -y curl git make locales python gridengine-drmaa1.0 pbs-drmaa1 slurm-drmaa1; \
+    apt-get install -y curl git make locales python gridengine-drmaa1.0 pbs-drmaa1 slurm-drmaa1 gridengine-client; \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Locale
@@ -27,4 +27,3 @@ USER root
 ADD start.sh /usr/local/bin/start.sh
 
 CMD ["/usr/local/bin/start.sh"]
-
