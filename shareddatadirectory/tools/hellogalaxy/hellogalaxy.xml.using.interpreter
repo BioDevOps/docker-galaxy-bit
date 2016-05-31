@@ -1,7 +1,7 @@
 <tool id="hellogalaxy" name="Hello Galaxy" version="0.0.1">
   <description>for Testing</description>
-  <command>
-    hostname > $outfile
+  <command interpreter="sh">
+    hellogalaxy.sh $num > $outfile
   </command>
   <inputs>
     <param name="num" type="integer" value="10" label="How many times?" />
