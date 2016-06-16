@@ -1,0 +1,18 @@
+<tool id="alwayssuccess" name="Always Success" version="0.0.1">
+  <description>for Testing</description>
+  <command>
+<![CDATA[
+    hostname > $outfile ;
+    date >> $outfile ;
+    echo 'output to stdout does not make job FAILURE on Galaxy' >&1
+]]>
+  </command>
+  <inputs>
+    <param name="num" type="integer" value="10" label="How many times?" />
+  </inputs>
+  <outputs>
+    <data format="tabular" name="outfile" label="${tool.name} on ${on_string}" />
+  </outputs>
+  <help>
+  </help>
+</tool>
