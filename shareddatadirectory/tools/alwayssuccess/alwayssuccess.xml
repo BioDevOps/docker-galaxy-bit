@@ -1,5 +1,5 @@
 <tool id="alwayssuccess" name="Always Success" version="0.0.1">
-  <description>for Testing</description>
+  <description>for Testing always Success</description>
   <command>
 <![CDATA[
     hostname > $outfile ;

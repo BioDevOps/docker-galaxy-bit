@@ -1,5 +1,5 @@
 <tool id="e1onlyjob" name="e1 only job" version="0.0.1">
-  <description>for Testing</description>
+  <description>for Testing to use SGE e1only queue expected</description>
   <command>
 <![CDATA[
     hostname > $outfile ;

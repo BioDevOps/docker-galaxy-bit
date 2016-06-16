@@ -1,5 +1,5 @@
 <tool id="hellogalaxy" name="Hello Galaxy" version="0.0.1">
-  <description>for Testing</description>
+  <description>for Testing hostname only</description>
   <command>
     hostname > $outfile
   </command>
