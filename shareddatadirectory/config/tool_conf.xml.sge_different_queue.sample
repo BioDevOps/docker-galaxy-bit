@@ -119,7 +119,7 @@
     <tool file="e1only/e1onlyjob.xml" />
     <tool file="e2only/e2onlyjob.xml" />
     <tool file="alwayssuccess/alwayssuccess.xml" />
-    <tool file="alwaysfail/alwayfail.xml" />
+    <tool file="alwaysfail/alwaysfail.xml" />
   </section>
 
 </toolbox>
