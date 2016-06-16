@@ -1,5 +1,23 @@
 #!/bin/bash
 
+if [ -z "${RUNUSER_UID+x}" ] ; then
+  RUNUSER_UID=$(id -u)
+fi
+if [ -z "${RUNUSER_GID+x}" ] ; then
+  RUNUSER_GID=$(id -g)
+fi
+if [ -z "${RUNUSER_USERNAME+x}" ] ; then
+  RUNUSER_USERNAME=${USER}
+fi
+
+if [ -z "${CONTAINER_NAME+x}" ] ; then
+  CONTAINER_NAME="${USER}_docker_galaxy"
+fi
+#echo ${RUNUSER_USERNAME}
+#echo ${RUNUSER_UID}
+#echo ${RUNUSER_GID}
+#echo ${CONTAINER_NAME}
+
 # Create database/files
 if [ ! -e shareddatadirectory/database/files ]; then
   rm -rf shareddatadirectory/database/files
@@ -44,5 +62,6 @@ docker run  --net=host --pid=host \
    -v $PWD/shareddatadirectory/job_working_directory:$PWD/shareddatadirectory/job_working_directory \
    -v $PWD/shareddatadirectory/database/files:$PWD/shareddatadirectory/database/files \
    -v $PWD/act_qmaster:/var/lib/gridengine/default/common/act_qmaster \
-   --name manabutgalaxytool -e RUNUSER_UID=10001 -e RUNUSER_GID=10000 -e RUNUSER_USERNAME=manabu \
+   --name ${CONTAINER_NAME} \
+   -e RUNUSER_UID=${RUNUSER_UID} -e RUNUSER_GID=${RUNUSER_GID} -e RUNUSER_USERNAME=${RUNUSER_USERNAME} \
    -p 8080:8080 --rm manabuishii/docker-galaxy-bit:0.3.0
