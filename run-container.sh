@@ -19,7 +19,7 @@ fi
 #echo ${CONTAINER_NAME}
 
 # Create database/files
-if [ ! -e shareddatadirectory/database/files ]; then
+if [ -e shareddatadirectory/database/files ]; then
   rm -rf shareddatadirectory/database/files
 fi
 mkdir -p shareddatadirectory/database/files
